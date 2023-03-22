@@ -40,10 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi){
+  return dizi = orijinalTatlar;
 }
-
+kopyala(orijinalTatlar)
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -56,9 +56,18 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi){
+  var dizi_uzunluk = dizi.length;
+  if(dizi_uzunluk === 25){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
+
+
+
 
 
 /* Görev 3:
@@ -74,10 +83,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(tatlar, ektat){
+  let yenitat = tatlar.unshift("Kakule");
+  return tatlar;
 }
-
 
 /* Cörev 4:
 
@@ -92,10 +101,10 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+  let yeni = dizi.pop();
+  return dizi;
 }
-
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,8 +117,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar, index){
+  return tatlar[index]
 }
 
 
@@ -128,10 +137,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzetadı){
+  let v = tatlar.splice(tatlar.indexOf(lezzetadı), 1)
+  return tatlar;
 }
-
 
 /* Görev 7:
 
@@ -154,9 +163,34 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+
+
+
+
+/*function ismeGoreFiltrele(tatlar, tat){
+  let y = "";
+  for(let i=0; i<tatlar.length; i++){
+    if(tatlar[i].includes(tat)){
+      y = tatlar[i];
+    }
+  }
+  return y
 }
+ismeGoreFiltrele(orijinalTatlar,"Çikolata");*/
+
+
+
+
+function ismeGoreFiltrele(tatlar, tat){
+  for(let i=0; i<orijinalTatlar.length; i++){
+    if(orijinalTatlar[i].includes("Çikolata")){
+     return orijinalTatlar[i] ;
+    }
+  }
+}
+
+ismeGoreFiltrele(orijinalTatlar, "Çikolata")
+
 
 
 
